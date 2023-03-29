@@ -16,6 +16,7 @@ shorters = 3
 short_size = 1
 rate_min = 1
 rate_max = 8
+plot_averages = False
 st.columns(1, gap="small")
 expected_value_choice = "last value"
 expected_value = 0
@@ -30,7 +31,8 @@ if __name__ == "__main__":
     colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
     color = colors[0]  # starting color
     p = plt.plot(history, label="history", color=color)
-    plt.plot([avg(history)] * len(history), color=color, linestyle="--")
+    if plot_averages:
+        plt.plot([avg(history)] * len(history), color=color, linestyle="--")
     actual = [np.nan] * (term_length - 1)
     label = "longer's expectations"
     market_equilibrium = 0
@@ -54,13 +56,14 @@ if __name__ == "__main__":
             color = colors[1]
             label = "expectations"
         p = plt.plot(actual + expectation, label=label, color=color, linewidth=size, alpha=0.5)
-        plt.plot(
-            actual + [avg(expectation)] * len(expectation),
-            color=color,
-            linestyle="--",
-            linewidth=size,
-            alpha=0.5,
-        )
+        if plot_averages:
+            plt.plot(
+                actual + [avg(expectation)] * len(expectation),
+                color=color,
+                linestyle="--",
+                linewidth=size,
+                alpha=0.5,
+            )
         market_equilibrium += avg(expectation) * size
     market_equilibrium = market_equilibrium / (long_size * longers + short_size * shorters)
     plt.plot(actual + [market_equilibrium] * len(expectation), label="market equilibrium", color=colors[3])
