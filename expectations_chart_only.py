@@ -63,6 +63,8 @@ if __name__ == "__main__":
             linewidth=size,
             alpha=0.5,
         )
+        market_equilibrium += avg(expectation) * size
+    market_equilibrium = market_equilibrium / (long_size * longers + short_size * shorters)
     plt.plot(actual + [market_equilibrium] * len(expectation), label="market equilibrium", color=colors[3])
     plt.legend()
     st.pyplot(fig)
