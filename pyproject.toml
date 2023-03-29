@@ -10,3 +10,5 @@ line-length = "120"
 extend-exclude = "\\.ipynb"
 
 [tool.pyright]
+
+[tool.poetry]
