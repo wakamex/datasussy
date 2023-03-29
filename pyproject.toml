@@ -16,3 +16,7 @@ name = 'Hyperdrive Expectations'
 version = '0.1.0'
 description = 'shows how market participants create the market expectation'
 authors = ['Mihai Cosma']
+[tool.poetry.dependencies]
+matplotlib
+numpy
+streamlit
