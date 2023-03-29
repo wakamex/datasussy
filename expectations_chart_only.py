@@ -16,7 +16,7 @@ shorters = 6
 short_size = 1
 rate_min = 1
 rate_max = 8
-st.columns(1)
+st.columns(1, gap="small")
 expected_value_choice = "last value"
 expected_value = 0
 
