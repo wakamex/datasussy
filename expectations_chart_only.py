@@ -9,6 +9,7 @@ def avg(lst):
 
 
 st.set_page_config(layout="wide")
+st.button("Refresh", type="primary", use_container_width=True)
 longers = 5
 long_size = 1
 shorters = 6
