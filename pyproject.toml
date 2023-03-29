@@ -12,3 +12,7 @@ extend-exclude = "\\.ipynb"
 [tool.pyright]
 
 [tool.poetry]
+name = 'Hyperdrive Expectations'
+version = '0.1.0'
+description = 'shows how market participants create the market expectation'
+authors = 'Mihai Cosma'
